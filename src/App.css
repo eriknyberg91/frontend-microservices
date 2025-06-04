@@ -136,7 +136,7 @@ html, body {
     }
 
     @media (width >= 1400px) {
-      grid-template-columns: 80px 1fr;
+      grid-template-columns: 180px 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas: "nav header" "nav main" "nav footer";
     }
@@ -149,11 +149,52 @@ nav {
     padding: 1.5rem;
 }
 
+/* Various AI such as ChatGPT, Claude was used to help with styling */
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black; 
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--cool-gray-90);
+}
+
+.fontawesome-icon{
+  margin-right: 0.4rem;
+}
+
+
 header {
     grid-area: header;
     background-color: var(--header-background-color);
     border-radius: 1rem;
     padding: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-100); 
+    text-align: center;
 }
 
 main {
@@ -168,4 +209,92 @@ footer {
     background-color: var(--footer-background-color);
     border-radius: 1rem;
     padding: 1.5rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--gray-100); 
+    gap: 1rem; 
+
+}
+#events.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-background-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+}
+
+.event-type-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: var(--gray-90);
+  color: var(--gray-00);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.event-status-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: var(--primary-50);
+  color: var(--primary-100);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.event-image-placeholder {
+  height: 120px;
+  background-color: var(--gray-70);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.event-datetime {
+  font-size: 0.85rem;
+  color: var(--gray-40);
+  margin-bottom: 0.25rem;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-100) !important; 
+  margin-bottom: 0.5rem;
+}
+
+.event-location {
+  font-size: 0.85rem;
+  color: var(--gray-50);
+  margin-bottom: 1rem;
+}
+
+.event-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-100);
+  margin-top: auto;
 }
