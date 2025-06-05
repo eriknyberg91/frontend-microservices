@@ -12,9 +12,11 @@ const Nav = () => {
         <img src={logo} alt="Ventixe Logo" className="nav-logo" />
         <span className="nav-title">Ventixe</span>
       </div>
+      <div className='nav-navigation-links'>
         <NavLink to="/" className="nav-link" >
           <FontAwesomeIcon className='fontawesome-icon' icon={faList} /> Events
         </NavLink>
+      </div>
     </nav>
   )
 }

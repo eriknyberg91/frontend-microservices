@@ -128,6 +128,7 @@ html, body {
     grid-template-rows: auto 1fr auto;
     grid-template-areas: "nav" "main" "footer";
     height: 100dvh;
+    background-color: #FFFFFF;
 
     @media (width >= 768px) {
       grid-template-columns: 250px 1fr;
@@ -136,7 +137,7 @@ html, body {
     }
 
     @media (width >= 1400px) {
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 200px 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas: "nav header" "nav main" "nav footer";
     }
@@ -144,9 +145,11 @@ html, body {
 
 nav {
     grid-area: nav;
-    background-color: var(--nav-background-color);
+    background-color: #EEEFFF;
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding: 2.3rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
 }
 
 /* Various AI such as ChatGPT, Claude was used to help with styling */
@@ -156,6 +159,11 @@ nav {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
+}
+
+.nav-navigation-links {
+  display: flex;
+  justify-content: center;
 }
 
 .nav-logo {
@@ -182,19 +190,17 @@ nav {
 
 header {
     grid-area: header;
-    background-color: var(--header-background-color);
+    background-color: var(--gray-90);
+    color: var(--secondary-100);
     border-radius: 1rem;
     padding: 1.5rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-
     font-size: 2rem;
     font-weight: 700;
-    color: var(--gray-100); 
     text-align: center;
+    margin-top: 1rem;
 }
 
 main {
@@ -202,11 +208,13 @@ main {
     background-color: var(--main-background-color);
     border-radius: 1rem;
     padding: 1.5rem;
+    background: #FFFFFF;
 }
 
 footer {
     grid-area: footer;
-    background-color: var(--footer-background-color);
+    background-color: var(--gray-90);
+    color: #777779;
     border-radius: 1rem;
     padding: 1.5rem;
 
@@ -214,21 +222,22 @@ footer {
     justify-content: flex-start;
     align-items: center;
     font-size: 0.9rem;
-    color: var(--gray-100); 
     gap: 1rem; 
-
 }
+
 #events.event-grid {
+  background: var(--gray-90);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
+  border-radius: 1rem;
 }
 
 .event-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--card-background-color);
+  background-color: var(--gray-100);
   border-radius: 1rem;
   padding: 1rem;
   text-decoration: none;
@@ -297,4 +306,134 @@ footer {
   font-weight: 600;
   color: var(--primary-100);
   margin-top: auto;
+  display: flex;
+  justify-content: end;
 }
+
+.event-details-wrapper {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.event-details-image-placeholder {
+  background-color: #d9d9d9;
+  height: 300px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.event-details-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.event-details-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.event-details-meta {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.event-details-description-block {
+  border-top: 1px solid #eaeaea;
+  padding-top: 1rem;
+  text-align: left;
+  color: #444;
+}
+
+.event-details-description-block h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.event-details-book-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #a855f7;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.event-details-book-button:hover {
+  background-color: #9333ea;
+}
+
+.booking-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #f9f9ff;
+  padding: 1rem;
+}
+
+.booking-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.booking-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.booking-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.booking-form label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.booking-form input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.booking-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-button:hover {
+  background-color: #9333ea;
+}
+
+

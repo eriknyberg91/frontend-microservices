@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const EventDetailsPage = () => {
-
-    const {id} = useParams()
+    const { id } = useParams()
     const [event, setEvent] = useState({})
 
     const getEvents = async () => {
@@ -13,17 +15,34 @@ const EventDetailsPage = () => {
             const response = await res.json()
             setEvent(response.result)
         }
-    } 
-    
+    }
+
     useEffect(() => {
         getEvents()
     }, [])
 
-
     return (
-        <div className="event-details">
-            <h1>{event.title}</h1>
-            <Link to={`/events/booking/${id}`}>Book Event</Link>
+        <div className="portal-wrapper">
+            <Nav />
+            <Header />
+            <div className="event-details-wrapper">
+                <div className="event-details-image-placeholder" />
+                <div className="event-details-content">
+                    <h1 className="event-details-title">{event.title}</h1>
+                    <p className="event-details-meta">
+                        📅 {new Date(event.eventDate).toLocaleString([], { dateStyle: 'long', timeStyle: 'short' })} <br />
+                        📍 {event.location}
+                    </p>
+                    <div className="event-details-description-block">
+                        <h2>About Event</h2>
+                        <p>{event.description}</p>
+                    </div>
+                    <Link className="event-details-book-button" to={`/events/booking/${id}`}>
+                        Book Event
+                    </Link>
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 }
